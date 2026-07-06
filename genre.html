@@ -6,6 +6,14 @@
     <title>Genre Film</title>
 
     <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genre Film</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -37,37 +45,50 @@
         <div class="genre-container">
 
             <div class="genre-card">
-                <a href="film.html">🎬<br><br>Aksi</a>
+                <a href="?genre=Aksi">🎬<br><br>Aksi</a>
             </div>
 
             <div class="genre-card">
-                <a href="film.html">😂<br><br>Komedi</a>
+                <a href="?genre=Komedi">😂<br><br>Komedi</a>
             </div>
 
             <div class="genre-card">
-                <a href="film.html">👻<br><br>Horor</a>
+                <a href="?genre=Horor">👻<br><br>Horor</a>
             </div>
 
             <div class="genre-card">
-                <a href="film.html">❤️<br><br>Romantis</a>
+                <a href="?genre=Romantis">❤️<br><br>Romantis</a>
             </div>
 
             <div class="genre-card">
-                <a href="film.html">🚀<br><br>Sci-Fi</a>
+                <a href="?genre=Sci-Fi">🚀<br><br>Sci-Fi</a>
             </div>
 
             <div class="genre-card">
-                <a href="film.html">🧙<br><br>Fantasy</a>
+                <a href="?genre=Fantasy">🧙<br><br>Fantasy</a>
             </div>
 
             <div class="genre-card">
-                <a href="film.html">🎭<br><br>Drama</a>
+                <a href="?genre=Drama">🎭<br><br>Drama</a>
             </div>
 
             <div class="genre-card">
-                <a href="film.html">👨‍👩‍👧<br><br>Keluarga</a>
+                <a href="?genre=Keluarga">👨‍👩‍👧<br><br>Keluarga</a>
             </div>
 
+        </div>
+
+        <div class="section-title" id="results-title" style="display:none; margin-top:30px;">
+            <h2 id="selected-genre-title">Hasil</h2>
+        </div>
+
+        <div class="cards" id="genre-cards" style="display:none; margin-top:20px;"></div>
+
+        <div class="bottom-marquee">
+            <div class="marquee-track">
+                <span>✨ Temukan film terbaik setiap hari • Genre baru selalu hadir • Stream sekarang di STREAM+ •</span>
+                <span>✨ Temukan film terbaik setiap hari • Genre baru selalu hadir • Stream sekarang di STREAM+ •</span>
+            </div>
         </div>
 
     </section>
@@ -77,6 +98,100 @@
 <footer>
     Copyright © 2026 STREAM+
 </footer>
+
+<script>
+// Simple client-side genre -> films mapping and renderer
+const genreMap = {
+    'Aksi': [
+        {title:'Extraction', img:'images/film2.jpg'},
+        {title:'Fast & Furious', img:'images/film3.jpg'},
+        {title:'The Raid', img:'images/film2.jpg'},
+        {title:'Mission Impossible', img:'images/film1.jpg'}
+    ],
+    'Komedi': [
+        {title:'Deadpool', img:'images/film1.jpg'},
+        {title:'Superbad', img:'images/film3.jpg'},
+        {title:'21 Jump Street', img:'images/film2.jpg'}
+    ],
+    'Horor': [
+        {title:'The Conjuring', img:'images/film3.jpg'},
+        {title:'Insidious', img:'images/film2.jpg'}
+    ],
+    'Romantis': [
+        {title:'The Notebook', img:'images/film1.jpg'}
+    ],
+    'Sci-Fi': [
+        {title:'Interstellar', img:'images/film1.jpg'},
+        {title:'Avatar', img:'images/film2.jpg'}
+    ],
+    'Fantasy': [
+        {title:'Harry Potter', img:'images/film3.jpg'}
+    ],
+    'Drama': [
+        {title:'The Godfather', img:'images/film1.jpg'}
+    ],
+    
+};
+
+function renderGenre(genre){
+    const list = genreMap[genre] || [];
+    const container = document.getElementById('genre-cards');
+    const titleEl = document.getElementById('selected-genre-title');
+    const resultsTitle = document.getElementById('results-title');
+    if(!container) return;
+    container.innerHTML = '';
+    if(list.length === 0){
+        titleEl.textContent = 'Tidak ada film untuk "' + genre + '"';
+    } else {
+        titleEl.textContent = 'Genre: ' + genre;
+        list.forEach(f => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `<img src="${f.img}" alt="${f.title}"><h3>${f.title}</h3>`;
+            container.appendChild(card);
+        });
+    }
+    resultsTitle.style.display = 'block';
+    container.style.display = 'grid';
+}
+
+// on load, check query param
+const params = new URLSearchParams(window.location.search);
+const g = params.get('genre');
+if(g){
+    // decode and normalize
+    const genreName = decodeURIComponent(g);
+    renderGenre(genreName);
+}
+
+// make full .genre-card clickable (in case anchor is small)
+document.querySelectorAll('.genre-card').forEach(card => {
+    const a = card.querySelector('a');
+    if(!a) return;
+    // click on card navigates to anchor href
+    card.addEventListener('click', (e) => {
+        // ignore clicks on any controls inside if needed
+        if(e.target.tagName.toLowerCase() === 'a') return;
+        const href = a.getAttribute('href');
+        if(href) window.location.href = href;
+    });
+    // ensure anchor itself still works
+    a.addEventListener('click', (e) => {
+        // allow default navigation
+    });
+});
+</script>
+
+<script>
+// mark active nav link
+document.addEventListener('DOMContentLoaded', ()=>{
+    const path = window.location.pathname.split('/').pop() || 'genre.html';
+    document.querySelectorAll('nav a').forEach(a=>{
+        const href = a.getAttribute('href');
+        if(href === path) a.classList.add('active');
+    });
+});
+</script>
 
 </body>
 </html>

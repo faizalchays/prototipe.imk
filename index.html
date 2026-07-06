@@ -4,6 +4,7 @@
 <head>
     <title>Streaming Film</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,7 +27,12 @@
 </nav>
 
 <div class="search">
-<input type="text" placeholder="Cari Film">
+</div>
+
+    <div class="search">
+        <input id="site-search" type="text" placeholder="Cari Film">
+        <ul id="search-suggestions" class="search-suggestions" style="display:none;"></ul>
+    </div>
 </div>
 
 </header>
@@ -34,11 +40,13 @@
 
 <div class="banner">
 
-<div>
+<img src="banner.jpg" alt="Banner Film" class="banner-photo">
 
-<h1>Banner Film Utama</h1>
+<div class="banner-text">
 
-<p>Film terbaik minggu ini.</p>
+<h1 class="banner-title"><span class="stream-name">STREAM+</span> <span class="title-accent">Film Pilihan</span></h1>
+
+<p class="banner-sub">Koleksi film terbaik & rekomendasi mingguan.</p>
 
 <a href="film.html" class="btn">Tonton Sekarang</a>
 
@@ -59,19 +67,21 @@
 
 <div class="genre-list">
 
-<div class="genre">Aksi</div>
+<a class="genre" href="genre.html?genre=Aksi">Aksi</a>
 
-<div class="genre">Komedi</div>
+<a class="genre" href="genre.html?genre=Komedi">Komedi</a>
 
-<div class="genre">Horor</div>
+<a class="genre" href="genre.html?genre=Horor">Horor</a>
 
-<div class="genre">Drama</div>
+<a class="genre" href="genre.html?genre=Drama">Drama</a>
 
-<div class="genre">Anime</div>
+<a class="genre" href="genre.html?genre=Anime">Anime</a>
 
-<div class="genre">Sci-Fi</div>
+<a class="genre" href="genre.html?genre=Sci-Fi">Sci-Fi</a>
 
 </div>
+
+<a href="genre.html" class="choice-link">Pilihan</a>
 
 </section>
 
@@ -85,31 +95,60 @@
 
 </div>
 
-<div class="cards">
+<div class="cards cards-vertical">
 
-<div class="card">
-<img src="images/film1.jpg">
+<a href="film.html?title=John%20Wick" class="card-link" data-title="John Wick" data-video="video/Johnwick.mp4"><div class="card">
+<img src="Johnwick.jpeg">
 <h3>John Wick</h3>
-</div>
+</div></a>
 
-<div class="card">
-<img src="images/film2.jpg">
+<a href="film.html?title=Avengers" class="card-link" data-title="Avengers" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+<img src="avenger.png">
 <h3>Avengers</h3>
-</div>
+</div></a>
 
-<div class="card">
-<img src="images/film3.jpg">
-<h3>Batman</h3>
-</div>
+<a href="film.html?title=Alas%20Roban" class="card-link" data-title="Alas Roban" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+<img src="alasroban.jpeg">
+<h3>Alas Roban</h3>
+</div></a>
 
-<div class="card">
-<img src="images/film1.jpg">
+<a href="film.html?title=Interstellar" class="card-link" data-title="Interstellar" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+<img src="interstelar.jpeg">
 <h3>Interstellar</h3>
-</div>
+</div></a>
+
+<a href="film.html?title=Extraction" class="card-link" data-title="Jangan Buang Ibu" data-video="video/Janganbuangibu.mp4"><div class="card">
+<img src="janganbuangibu.jpg">
+<h3>Jangan Buang Ibu</h3>
+</div></a>
+
+<a href="film.html?title=Avatar" class="card-link" data-title="Tunggu Aku Sukses Nanti" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+<img src="images/tunggusukses.jpeg">
+<h3>Tunggu Aku Sukses Nanti</h3>
+</div></a>
+
+<a href="film.html?title=The%20Conjuring" class="card-link" data-title="Kejar Mimpi" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+<img src="Kejarmimpi.jpg">
+<h3>Kejar Mimpi</h3>
+</div></a>
+
+<a href="film.html?title=Harry%20Potter" class="card-link" data-title="Danur" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+<img src="Danur.jpg">
+<h3>Danur</h3>
+</div></a>
 
 </div>
 
-</section>
+<div id="home-player" class="player-section" style="display:none;">
+    <div class="player-header">
+        <h2 id="home-player-title">Now Playing</h2>
+        <button id="home-player-close" class="btn btn-ghost">Tutup</button>
+    </div>
+    <video id="home-film-video" controls preload="metadata" style="width:100%;border-radius:16px;background:#000;">
+        <source src="" type="video/mp4">
+        Browser Anda tidak mendukung pemutar video ini.
+    </video>
+</div>
 
 </div>
 
@@ -121,3 +160,102 @@ Copyright © 2026
 
 </body>
 </html>
+
+<script>
+// Site-wide quick search suggestions
+const filmsIndex = [
+    {title:'John Wick', url:'film.html?title=John%20Wick'},
+    {title:'Avengers', url:'film.html?title=Avengers'},
+    {title:'Batman', url:'film.html?title=Batman'},
+    {title:'Interstellar', url:'film.html?title=Interstellar'},
+    {title:'Extraction', url:'film.html?title=Extraction'},
+    {title:'Fast Furious', url:'film.html?title=Fast%20Furious'},
+    {title:'The Raid', url:'film.html?title=The%20Raid'},
+    {title:'Mission Impossible', url:'film.html?title=Mission%20Impossible'},
+    {title:'Deadpool', url:'film.html?title=Deadpool'},
+    {title:'Superbad', url:'film.html?title=Superbad'},
+    {title:'21 Jump Street', url:'film.html?title=21%20Jump%20Street'},
+    {title:'The Conjuring', url:'film.html?title=The%20Conjuring'},
+    {title:'Insidious', url:'film.html?title=Insidious'},
+    {title:'The Notebook', url:'film.html?title=The%20Notebook'},
+    {title:'Avatar', url:'film.html?title=Avatar'},
+    {title:'Harry Potter', url:'film.html?title=Harry%20Potter'},
+    {title:'The Godfather', url:'film.html?title=The%20Godfather'},
+    {title:'Toy Story', url:'film.html?title=Toy%20Story'}
+];
+
+function attachSearchInput(){
+    const input = document.getElementById('site-search');
+    const sug = document.getElementById('search-suggestions');
+    if(!input || !sug) return;
+    let active = -1;
+    input.addEventListener('input', ()=>{
+        const v = input.value.trim().toLowerCase();
+        if(!v){ sug.style.display='none'; sug.innerHTML=''; return; }
+        const matches = filmsIndex.filter(f=>f.title.toLowerCase().includes(v)).slice(0,8);
+        sug.innerHTML = matches.map(m=>`<li tabindex="0" data-url="${m.url}">${m.title}</li>`).join('');
+        sug.style.display = matches.length? 'block':'none';
+        active = -1;
+    });
+    input.addEventListener('keydown',(e)=>{
+        const items = sug.querySelectorAll('li');
+        if(e.key === 'ArrowDown'){ e.preventDefault(); active = Math.min(active+1, items.length-1); updateActive(items, active); }
+        else if(e.key === 'ArrowUp'){ e.preventDefault(); active = Math.max(active-1, 0); updateActive(items, active); }
+        else if(e.key === 'Enter'){ e.preventDefault(); if(active>=0 && items[active]) window.location.href = items[active].dataset.url; else if(input.value.trim()) { window.location.href = 'film.html?title='+encodeURIComponent(input.value.trim()); } }
+        else if(e.key === 'Escape'){ sug.style.display='none'; }
+    });
+    sug.addEventListener('click',(ev)=>{
+        const li = ev.target.closest('li');
+        if(!li) return; window.location.href = li.dataset.url;
+    });
+    function updateActive(items, idx){ items.forEach(i=>i.classList.remove('active')); if(items[idx]) items[idx].classList.add('active'); }
+}
+
+document.addEventListener('DOMContentLoaded', attachSearchInput);
+</script>
+
+<script>
+(function(){
+    const links = document.querySelectorAll('.card-link[data-video]');
+    const playerSection = document.getElementById('home-player');
+    const playerTitle = document.getElementById('home-player-title');
+    const playerVideo = document.getElementById('home-film-video');
+    const playerSource = playerVideo.querySelector('source');
+    const closeBtn = document.getElementById('home-player-close');
+
+    function openPlayer(link){
+        const videoSrc = link.dataset.video;
+        const title = link.dataset.title || link.querySelector('h3')?.textContent || 'Film';
+        if(!videoSrc) return;
+        playerTitle.textContent = title;
+        playerSource.src = videoSrc;
+        playerVideo.load();
+        playerVideo.play().catch(()=>{});
+        playerSection.style.display = 'block';
+        playerSection.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    links.forEach(link=>{
+        link.addEventListener('click', (event)=>{
+            event.preventDefault();
+            openPlayer(link);
+        });
+    });
+    closeBtn.addEventListener('click', ()=>{
+        playerVideo.pause();
+        playerSection.style.display = 'none';
+    });
+})();
+</script>
+
+<script>
+// mark active nav link
+document.addEventListener('DOMContentLoaded', ()=>{
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a').forEach(a=>{
+        const href = a.getAttribute('href');
+        if(href === path || (href === 'index.html' && path === '')) a.classList.add('active');
+        if(href === path) a.classList.add('active');
+    });
+});
+</script>
