@@ -3,24 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genre Film</title>
-
-    <link rel="stylesheet" href="style.css">
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genre Film</title>
+    <title>Genre | STREAM+</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-
     <div class="logo">STREAM+</div>
-
     <nav>
         <a href="index.html">Beranda</a>
         <a href="film.html">Film</a>
@@ -31,19 +21,14 @@
     <div class="search">
         <input type="text" placeholder="Cari Film">
     </div>
-
 </header>
 
 <div class="container">
-
     <section>
-
         <div class="section-title">
             <h2>Pilih Genre Film</h2>
         </div>
-
         <div class="genre-container">
-
             <div class="genre-card">
                 <a href="?genre=Aksi">🎬<br><br>Aksi</a>
             </div>
@@ -75,7 +60,6 @@
             <div class="genre-card">
                 <a href="?genre=Keluarga">👨‍👩‍👧<br><br>Keluarga</a>
             </div>
-
         </div>
 
         <div class="section-title" id="results-title" style="display:none; margin-top:30px;">
@@ -83,16 +67,13 @@
         </div>
 
         <div class="cards" id="genre-cards" style="display:none; margin-top:20px;"></div>
-
         <div class="bottom-marquee">
             <div class="marquee-track">
                 <span>✨ Temukan film terbaik setiap hari • Genre baru selalu hadir • Stream sekarang di STREAM+ •</span>
                 <span>✨ Temukan film terbaik setiap hari • Genre baru selalu hadir • Stream sekarang di STREAM+ •</span>
             </div>
         </div>
-
     </section>
-
 </div>
 
 <footer>
@@ -102,35 +83,120 @@
 <script>
 // Simple client-side genre -> films mapping and renderer
 const genreMap = {
-    'Aksi': [
-        {title:'Extraction', img:'images/film2.jpg'},
-        {title:'Fast & Furious', img:'images/film3.jpg'},
-        {title:'The Raid', img:'images/film2.jpg'},
-        {title:'Mission Impossible', img:'images/film1.jpg'}
+    "Aksi": [
+        {
+            title: "Extraction",
+            img: "assets/images/extraction.jpg",
+            video: "assets/video/Extraction.mp4"
+        },
+        {
+            title: "Fast & Furious",
+            img: "assets/images/F&F.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "The Raid",
+            img: "assets/images/Raid.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "Mission Impossible",
+            img: "assets/images/MIM.jpg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        }
     ],
-    'Komedi': [
-        {title:'Deadpool', img:'images/film1.jpg'},
-        {title:'Superbad', img:'images/film3.jpg'},
-        {title:'21 Jump Street', img:'images/film2.jpg'}
+
+    "Komedi": [
+        {
+            title: "Agak Laen",
+            img: "assets/images/agaklaen.jpeg",
+            video: "assets/video/agaklaen.mp4"
+        },
+        {
+            title: "Modal Nekat",
+            img: "assets/images/modual.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "21 Jump Street",
+            img: "assets/images/21 Jump Street.jpg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "Bad Boy For Life",
+            img: "assets/images/Badboy.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        }
     ],
-    'Horor': [
-        {title:'The Conjuring', img:'images/film3.jpg'},
-        {title:'Insidious', img:'images/film2.jpg'}
+
+    "Horor": [
+        {
+            title: "The Conjuring",
+            img: "assets/images/Conjuring.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "Insidious",
+            img: "assets/images/insidius.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "The Ring",
+            img: "assets/images/The ring.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "Sinister",
+            img: "assets/images/Sinister.jpg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        }
     ],
-    'Romantis': [
-        {title:'The Notebook', img:'images/film1.jpg'}
+
+    "Anime": [
+        {
+            title: "Spirited Away",
+            img: "assets/images/spirited.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "Your Name",
+            img: "assets/images/yourname.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "Demon Slayer",
+            img: "assets/images/demonslayer.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "Attack on Titan",
+            img: "assets/images/aot.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        }
     ],
-    'Sci-Fi': [
-        {title:'Interstellar', img:'images/film1.jpg'},
-        {title:'Avatar', img:'images/film2.jpg'}
-    ],
-    'Fantasy': [
-        {title:'Harry Potter', img:'images/film3.jpg'}
-    ],
-    'Drama': [
-        {title:'The Godfather', img:'images/film1.jpg'}
-    ],
-    
+
+    "Drama": [
+        {
+            title: "The Godfather",
+            img: "assets/images/thegodfather.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "Titanic",
+            img: "assets/images/titanic.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "The Pursuit of Happyness",
+            img: "assets/images/thepursuit.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            title: "A Star Is Born",
+            img: "assets/images/astarisborn.jpeg",
+            video: "https://www.w3schools.com/html/mov_bbb.mp4"
+        }
+    ]
 };
 
 function renderGenre(genre){
@@ -146,8 +212,20 @@ function renderGenre(genre){
         titleEl.textContent = 'Genre: ' + genre;
         list.forEach(f => {
             const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `<img src="${f.img}" alt="${f.title}"><h3>${f.title}</h3>`;
+            card.className = "card";
+            card.innerHTML = `
+                <img
+                    src="${f.img}"
+                    alt="Poster ${f.title}"
+                    loading="lazy">
+
+                <h3>${f.title}</h3>
+            `;
+            card.addEventListener("click", () => {
+                window.location.href =
+                    "film.html?title=" + encodeURIComponent(f.title);
+        });
+
             container.appendChild(card);
         });
     }

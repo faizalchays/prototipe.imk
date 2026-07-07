@@ -2,19 +2,22 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <meta
+    name="description"
+    content="STREAM+ adalah website streaming film modern.">
 
-<title>Film</title>
+<title>Film | STREAM+</title>
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <header>
-
 <div class="logo">STREAM+</div>
-
 <nav>
     <a href="index.html">Beranda</a>
     <a href="film.html">Film</a>
@@ -22,255 +25,150 @@
     <a href="profile.html">Profil</a>
 </nav>
 
-<div class="search">
+    <div class="search">
+        <input
+            id="site-search"
+            type="text"
+            placeholder="Cari Film">
 
-<input type="text" placeholder="Cari Film">
-
-</div>
-
+        <ul
+            id="search-suggestions"
+            class="search-suggestions"
+            style="display:none;">
+        </ul>
+    </div>
 </header>
 
 <div class="container">
+    <section>
+    <h2 class="section-title">Film Aksi</h2>
+        <div class="cards">
+            <div class="card" data-title="Extraction" data-video="assets/video/Extraction.mp4">
+                <img src="assets/images/extraction.jpg" alt="Poster Extraction" loading="lazy">
+                <h3>Extraction</h3>
+            </div>
+            <div class="card" data-title="Fast & Furious" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/F&F.jpeg" alt="Poster Fast & Furious" loading="lazy">
+                <h3>Fast & Furious</h3>
+            </div>
 
-<div id="player-section" class="player-section" style="display:none;">
-    <div class="player-header">
-        <h2 id="player-title">Now Playing</h2>
-        <button id="close-player" class="btn btn-ghost">Tutup</button>
-    </div>
-    <video id="film-video" controls preload="metadata" style="width:100%;border-radius:16px;background:#000;">
-        <source src="" type="video/mp4">
-        Browser Anda tidak mendukung pemutar video ini.
-    </video>
+            <div class="card" data-title="The Raid" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/Raid.jpeg" alt="Poster The Raid" loading="lazy">
+                <h3>The Raid</h3>
+            </div>
+
+            <div class="card" data-title="Mission Impossible" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/MIM.jpg" alt="Poster Mission Impossible" loading="lazy">
+                <h3>Mission Impossible</h3>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <h2 class="section-title">Film Komedi</h2>
+        <div class="cards">
+            <div class="card" data-title="Agak Laen" data-video="assets/video/agaklaen.mp4">
+                <img src="assets/images/agaklaen.jpeg" alt="Poster Agak Laen" loading="lazy">
+                <h3>Agak Laen</h3>
+            </div>
+
+            <div class="card" data-title="Modual Nekat" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/modual.jpeg" alt="Poster Modual Nekat" loading="lazy">
+                <h3>Modual Nekat</h3>
+            </div>
+
+            <div class="card" data-title="21 Jump Street" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/21 Jump Street.jpg" alt="Poster 21 Jump Street" loading="lazy">
+                <h3>21 Jump Street</h3>
+            </div>
+
+            <div class="card" data-title="Bad Boy For Life" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/Badboy.jpeg" alt="Poster Bad Boy For Life" loading="lazy">
+                <h3>Bad Boy For Life</h3>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <h2 class="section-title">Film Horor</h2>
+        <div class="cards">
+            <div class="card" data-title="The Conjuring" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/Conjuring.jpeg" alt="Poster The Conjuring" loading="lazy">
+                <h3>The Conjuring</h3>
+            </div>
+
+            <div class="card" data-title="Insidious" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/insidius.jpeg" alt="Poster Insidious" loading="lazy">
+                <h3>Insidious</h3>
+            </div>
+
+            <div class="card" data-title="The Ring" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/The ring.jpeg" alt="Poster The Ring" loading="lazy">
+                <h3>The Ring</h3>
+            </div>
+
+            <div class="card" data-title="Sinister" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/Sinister.jpg" alt="Poster Sinister" loading="lazy">
+                <h3>Sinister</h3>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <h2 class="section-title">Film Anime</h2>
+        <div class="cards">
+            <div class="card" data-title="Spirited Away" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/spirited.jpeg" alt="Poster Spirited Away" loading="lazy">
+                <h3>Spirited Away</h3>
+            </div>
+
+            <div class="card" data-title="Your Name" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/yourname.jpeg" alt="Poster Your Name" loading="lazy">
+                <h3>Your Name</h3>
+            </div>
+
+            <div class="card" data-title="Demon Slayer" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/demonslayer.jpeg" alt="Poster Demon Slayer" loading="lazy">
+                <h3>Demon Slayer</h3>
+            </div>
+
+            <div class="card" data-title="Attack on Titan" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/aot.jpeg" alt="Poster Attack on Titan" loading="lazy">
+                <h3>Attack on Titan</h3>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <h2 class="section-title">Film Drama</h2>
+        <div class="cards">
+            <div class="card" data-title="The Godfather" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/thegodfather.jpeg" alt="Poster The Godfather" loading="lazy">
+                <h3>The Godfather</h3>
+            </div>
+
+            <div class="card" data-title="Titanic" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/titanic.jpeg" alt="Poster Titanic" loading="lazy">
+                <h3>Titanic</h3>
+            </div>
+
+            <div class="card" data-title="The Pursuit of Happyness" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/thepursuit.jpeg" alt="Poster The Pursuit of Happyness" loading="lazy">
+                <h3>The Pursuit of Happyness</h3>
+            </div>
+
+            <div class="card" data-title="A Star Is Born" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/images/astarisborn.jpeg" alt="Poster A Star Is Born" loading="lazy">
+                <h3>A Star Is Born</h3>
+            </div>
+        </div>
+    </section>
 </div>
 
-<section>
-
-<h1>Film Aksi</h1>
-
-<br>
-
-<div class="cards">
-
-    <div class="card" data-title="Extraction" data-video="video/Extraction.mp4">
-
-    <img src="extraction.jpg">
-
-    <h3>Extraction</h3>
-
-    </div>
-
-    <div class="card" data-title="Fast & Furious" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="F&F.jpeg">
-
-    <h3>Fast & Furious</h3>
-
-    </div>
-
-    <div class="card" data-title="The Raid" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="Raid.jpeg">
-
-    <h3>The Raid</h3>
-
-    </div>
-
-    <div class="card" data-title="Mission Impossible" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="MIM.jpg">
-
-    <h3>Mission Impossible</h3>
-
-    </div>
-
-</div>
-
-</section>
-
-<section>
-
-<h1>Film Komedi</h1>
-
-<br>
-
-<div class="cards">
-
-    <div class="card" data-title="Agak Laen" data-video="video/agaklaen.mp4">
-
-    <img src="agaklaen.jpeg">
-
-    <h3>Agak Laen</h3>
-
-    </div>
-
-    <div class="card" data-title="Modual Nekat" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/modual.jpeg">
-
-    <h3>Modual Nekat</h3>
-
-    </div>
-
-    <div class="card" data-title="21 Jump Street" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/21 Jump Street.jpg">
-
-    <h3>21 Jump Street</h3>
-
-    </div>
-
-    <div class="card" data-title="Bad Boy For Life" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/Badboy.jpeg">
-
-    <h3>Bad Boy For Life</h3>
-
-    </div>
-
-</div>
-
-</section>
-
-<section>
-
-<h1>Film Horor</h1>
-
-<br>
-
-<div class="cards">
-
-    <div class="card" data-title="The Conjuring" data-video="video/conjuring.jpg">
-
-    <img src="images/Conjuring.jpeg">
-
-    <h3>The Conjuring</h3>
-
-    </div>
-
-    <div class="card" data-title="Insidious" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/insidius.jpeg">
-
-    <h3>Insidious</h3>
-
-    </div>
-
-    <div class="card" data-title="The Ring" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/The ring.jpeg">
-
-    <h3>The Ring</h3>
-
-    </div>
-
-    <div class="card" data-title="Sinister" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="Danur.jpg">
-
-    <h3>Danur</h3>
-
-    </div>
-
-</div>
-
-</section>
-
-<section>
-
-<h1>Film Anime</h1>
-
-<br>
-
-<div class="cards">
-
-    <div class="card" data-title="Spirited Away" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/spirited.jpeg">
-
-    <h3>Spirited Away</h3>
-
-    </div>
-
-    <div class="card" data-title="Your Name" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/yourname.jpeg">
-
-    <h3>Your Name</h3>
-
-    </div>
-
-    <div class="card" data-title="Demon Slayer" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/demonslayer.jpeg">
-
-    <h3>Demon Slayer</h3>
-
-    </div>
-
-    <div class="card" data-title="Attack on Titan" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/aot.jpeg">
-
-    <h3>Attack on Titan</h3>
-
-    </div>
-
-</div>
-
-</section>
-
-<section>
-
-<h1>Film Drama</h1>
-
-<br>
-
-<div class="cards">
-
-    <div class="card" data-title="The Godfather" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/thegodfather.jpeg">
-
-    <h3>The Godfather</h3>
-
-    </div>
-
-    <div class="card" data-title="Titanic" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/titanic.jpeg">
-
-    <h3>Titanic</h3>
-
-    </div>
-
-    <div class="card" data-title="The Pursuit of Happyness" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/thepursuit.jpeg">
-
-    <h3>The Pursuit of Happyness</h3>
-
-    </div>
-
-    <div class="card" data-title="A Star Is Born" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
-
-    <img src="images/astarisborn.jpeg">
-
-    <h3>A Star Is Born</h3>
-
-    </div>
-
-</div>
-
-</section>
-
-</div>
-
-</body>
-
-</html>
+<footer><p>Copyright © 2026 STREAM+</p></footer>
 
 <script>
-// support highlighting when navigated with ?title=...
+    // highlight film
 function highlightTitleFromParam(){
     const params = new URLSearchParams(window.location.search);
     const t = params.get('title');
@@ -296,44 +194,22 @@ document.addEventListener('DOMContentLoaded', highlightTitleFromParam);
 </script>
 
 <script>
-// film click to MP4 video player
-(function(){
-    const cards = document.querySelectorAll('.card[data-video]');
-    const playerSection = document.getElementById('player-section');
-    const playerTitle = document.getElementById('player-title');
-    const playerVideo = document.getElementById('film-video');
-    const playerSource = playerVideo.querySelector('source');
-    const closeBtn = document.getElementById('close-player');
-
-    function openPlayer(card){
-        const videoSrc = card.dataset.video;
-        const title = card.dataset.title || card.querySelector('h3')?.textContent || 'Film';
-        if(!videoSrc) return;
-        playerTitle.textContent = title;
-        playerSource.src = videoSrc;
-        playerVideo.load();
-        playerVideo.play().catch(()=>{});
-        playerSection.style.display = 'block';
-        playerSection.scrollIntoView({behavior:'smooth', block:'start'});
-    }
-
-    function closePlayer(){
-        playerVideo.pause();
-        playerSource.src = '';
-        playerVideo.load();
-        playerSection.style.display = 'none';
-    }
-
-    cards.forEach(card=>{
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', ()=> openPlayer(card));
+    // klik card menuju detail-film.html
+(function () {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+        card.style.cursor = "pointer";
+        card.addEventListener("click", () => {
+            window.location.href =
+                "detail-film.html?title=" +
+                encodeURIComponent(card.dataset.title);
+        });
     });
-    closeBtn.addEventListener('click', closePlayer);
 })();
 </script>
 
 <script>
-// mark active nav link
+    // active navbar
 document.addEventListener('DOMContentLoaded', ()=>{
     const path = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav a').forEach(a=>{
@@ -342,3 +218,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
 });
 </script>
+
+</body>
+</html>

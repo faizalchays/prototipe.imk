@@ -1,3 +1,5 @@
+@media(max-width:768px){
+
 *{
     margin:0;
     padding:0;
@@ -47,19 +49,25 @@ header{
     top:0;
     z-index:60;
     box-shadow:0 6px 30px rgba(2,6,23,0.6);
+    flex-direction:column;
+    gap:15px;
 }
 
 .logo{
     font-size:30px;
     font-weight:800;
-    letter-spacing:1px;
-    color:linear-gradient(90deg,#fff,#ffd25a);
+    background:linear-gradient(90deg,#ffffff,#ffd54f);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
 nav{
+    flex-wrap:wrap;
     display:flex;
     gap:6px;
     align-items:center;
+    justify-content:center;
 }
 
 nav a{
@@ -112,6 +120,13 @@ nav a.active::after{transform:scaleX(1); opacity:1}
     background:rgba(255,255,255,0.04);
     color:#ffffff;
     border:1px solid rgba(255,255,255,0.06);
+    width:100%;
+}
+
+.search input:focus{
+    border:1px solid #ff4444;
+    box-shadow:
+    0 0 15px rgba(255,68,68,.4);
 }
 
 /* search suggestions dropdown */
@@ -238,9 +253,16 @@ nav a.active::after{transform:scaleX(1); opacity:1}
     display:inline-block;
     box-shadow:0 8px 20px rgba(255,68,68,0.15);
     transition:transform .18s ease, box-shadow .18s ease;
+    transform:translateY(-4px);
 }
 
-.btn:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(255,68,68,0.2);}
+.btn:hover{
+    cursor:pointer;
+    border:none;
+    font-weight:600;
+    transform:translateY(-4px);
+    box-shadow:0 16px 30px rgba(255,68,68,0.2);
+}
 
 .container{
     width:85%;
@@ -277,23 +299,32 @@ section{
 
 .card{
     background:#1f2937;
-    border-radius:10px;
+    border-radius:12px;
     overflow:hidden;
+    cursor:pointer;
     transition:.3s;
+    box-shadow:0 8px 18px rgba(0,0,0,.3);
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:
+    0 20px 35px rgba(0,0,0,.45);
 }
 
 .card img{
     width:100%;
-    height:250px;
+    height:300px;
     object-fit:cover;
+    transition:.4s;
 }
 
 .card h3{
     padding:10px;
+}
+
+.card:hover img{
+    transform:scale(1.05);
 }
 
 .genre-list{
@@ -326,8 +357,11 @@ section{
 footer{
     text-align:center;
     padding:20px;
-    background:#1f2937;
+    background:#0f172a;
     margin-top:auto;
+    border-top:
+    1px solid rgba(255,255,255,.08);
+
 }
 
 .bottom-marquee{
@@ -379,13 +413,6 @@ footer{
     gap:36px;
     align-items:flex-start;
     min-width:0;
-}
-
-.profile img{
-    width:220px;
-    height:auto;
-    border-radius:50%;
-    object-fit:cover;
 }
 
 .recommendation-panel{
@@ -470,17 +497,16 @@ footer{
 }
 
 .genre-card{
-    background:#1f2937;
-    padding:40px;
-    border-radius:10px;
-    text-align:center;
-    font-size:22px;
-    cursor:pointer;
     transition:.3s;
+    box-shadow:
+    0 8px 18px rgba(0,0,0,.25);
 }
 
 .genre-card:hover{
+    transform:translateY(-8px);
     background:#ff4444;
+    box-shadow:
+    0 20px 35px rgba(255,68,68,.35);
 }
 
 .genre-card a{
@@ -501,9 +527,6 @@ footer{
 .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.12);color:#fff;padding:8px 14px;border-radius:8px}
 .btn-ghost{background:transparent;color:#ffdca3;border:1px dashed rgba(255,255,255,0.04);padding:8px 12px;border-radius:8px}
 
-.profile{display:flex;gap:24px;align-items:center}
-.profile img{width:280px;height:auto;border-radius:50%;object-fit:cover}
-
 /* explicit avatar class for guest/profile images */
 .avatar-large{width:clamp(180px,28vw,280px);height:auto;border-radius:50%;object-fit:cover}
 .profile .info{max-width:640px}
@@ -520,8 +543,6 @@ footer{
 .modal-close{position:absolute;right:10px;top:8px;background:transparent;border:none;color:#9aa6b2;font-size:18px}
 .login-success{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:8px;color:#bbf7d0}
 .login-success svg{display:block}
-
-.highlight{box-shadow:0 0 0 4px rgba(255,68,68,0.08) inset, 0 12px 30px rgba(0,0,0,0.6);transform:translateY(-6px)}
 
 .detail{
     display:flex;
@@ -541,4 +562,39 @@ footer{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
+}
+
+.detail-page{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:40px;
+    margin-top:40px;
+}
+
+.detail-page img{
+    width:100%;
+    border-radius:15px;
+}
+
+.detail-page h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.movie-meta span{
+    background:#1f2937;
+    padding:8px 16px;
+    border-radius:30px;
+}
+
+.movie-description{
+    margin-top:20px;
+    line-height:1.8;
+    color:#ddd;
+}
+
+.detail-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
 }

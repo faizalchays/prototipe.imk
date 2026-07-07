@@ -2,7 +2,10 @@
 <html>
 
 <head>
-    <title>Streaming Film</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="STREAM+ adalah website streaming film modern.">
+    <title>STREAM+ | Streaming Film</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -13,149 +16,109 @@
 <header>
 
 <div class="logo">STREAM+</div>
-
 <nav>
-
-<a href="index.html">Beranda</a>
-
-<a href="film.html">Film</a>
-
-<a href="genre.html">Genre</a>
-
-<a href="profile.html">Profil</a>
-
+    <a href="index.html">Beranda</a>
+    <a href="film.html">Film</a>
+    <a href="genre.html">Genre</a>
+    <a href="profile.html">Profil</a>
 </nav>
 
 <div class="search">
-</div>
-
-    <div class="search">
-        <input id="site-search" type="text" placeholder="Cari Film">
-        <ul id="search-suggestions" class="search-suggestions" style="display:none;"></ul>
-    </div>
+    <input id="site-search" type="text" placeholder="Cari Film">
+    <ul id="search-suggestions" class="search-suggestions" style="display:none;"></ul>
 </div>
 
 </header>
 
-
 <div class="banner">
-
-<img src="banner.jpg" alt="Banner Film" class="banner-photo">
-
-<div class="banner-text">
-
-<h1 class="banner-title"><span class="stream-name">STREAM+</span> <span class="title-accent">Film Pilihan</span></h1>
-
-<p class="banner-sub">Koleksi film terbaik & rekomendasi mingguan.</p>
-
-<a href="film.html" class="btn">Tonton Sekarang</a>
-
+    <img src="assets/images/banner.jpg" alt="Banner STREAM+" class="banner-photo" loading="lazy">
+    <div class="banner-text">
+        <h1 class="banner-title"><span class="stream-name">STREAM+</span> <span class="title-accent">Film Pilihan</span></h1>
+        <p class="banner-sub">Koleksi film terbaik & rekomendasi mingguan.</p>
+        <a href="film.html" class="btn">Tonton Sekarang</a>
+    </div>
 </div>
-
-</div>
-
 
 <div class="container">
-
-<section>
-
-<div class="section-title">
-
-<h2>Kategori Trending</h2>
-
-</div>
-
-<div class="genre-list">
-
-<a class="genre" href="genre.html?genre=Aksi">Aksi</a>
-
-<a class="genre" href="genre.html?genre=Komedi">Komedi</a>
-
-<a class="genre" href="genre.html?genre=Horor">Horor</a>
-
-<a class="genre" href="genre.html?genre=Drama">Drama</a>
-
-<a class="genre" href="genre.html?genre=Anime">Anime</a>
-
-<a class="genre" href="genre.html?genre=Sci-Fi">Sci-Fi</a>
-
-</div>
-
-<a href="genre.html" class="choice-link">Pilihan</a>
-
-</section>
-
-<section>
-
-<div class="section-title">
-
-<h2>Rekomendasi Untuk Kamu</h2>
-
-<a href="film.html">Lihat Semua</a>
-
-</div>
-
-<div class="cards cards-vertical">
-
-<a href="film.html?title=John%20Wick" class="card-link" data-title="John Wick" data-video="video/Johnwick.mp4"><div class="card">
-<img src="Johnwick.jpeg">
-<h3>John Wick</h3>
-</div></a>
-
-<a href="film.html?title=Avengers" class="card-link" data-title="Avengers" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
-<img src="avenger.png">
-<h3>Avengers</h3>
-</div></a>
-
-<a href="film.html?title=Alas%20Roban" class="card-link" data-title="Alas Roban" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
-<img src="alasroban.jpeg">
-<h3>Alas Roban</h3>
-</div></a>
-
-<a href="film.html?title=Interstellar" class="card-link" data-title="Interstellar" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
-<img src="interstelar.jpeg">
-<h3>Interstellar</h3>
-</div></a>
-
-<a href="film.html?title=Extraction" class="card-link" data-title="Jangan Buang Ibu" data-video="video/Janganbuangibu.mp4"><div class="card">
-<img src="janganbuangibu.jpg">
-<h3>Jangan Buang Ibu</h3>
-</div></a>
-
-<a href="film.html?title=Avatar" class="card-link" data-title="Tunggu Aku Sukses Nanti" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
-<img src="images/tunggusukses.jpeg">
-<h3>Tunggu Aku Sukses Nanti</h3>
-</div></a>
-
-<a href="film.html?title=The%20Conjuring" class="card-link" data-title="Kejar Mimpi" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
-<img src="Kejarmimpi.jpg">
-<h3>Kejar Mimpi</h3>
-</div></a>
-
-<a href="film.html?title=Harry%20Potter" class="card-link" data-title="Danur" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
-<img src="Danur.jpg">
-<h3>Danur</h3>
-</div></a>
-
-</div>
-
-<div id="home-player" class="player-section" style="display:none;">
-    <div class="player-header">
-        <h2 id="home-player-title">Now Playing</h2>
-        <button id="home-player-close" class="btn btn-ghost">Tutup</button>
+    <section>
+        <div class="section-title">
+        <h2>Kategori Trending</h2>
     </div>
-    <video id="home-film-video" controls preload="metadata" style="width:100%;border-radius:16px;background:#000;">
-        <source src="" type="video/mp4">
-        Browser Anda tidak mendukung pemutar video ini.
-    </video>
-</div>
 
+    <div class="genre-list">
+        <a class="genre" href="genre.html?genre=Aksi">Aksi</a>
+        <a class="genre" href="genre.html?genre=Komedi">Komedi</a>
+        <a class="genre" href="genre.html?genre=Horor">Horor</a>
+        <a class="genre" href="genre.html?genre=Drama">Drama</a>
+        <a class="genre" href="genre.html?genre=Anime">Anime</a>
+        <a class="genre" href="genre.html?genre=Sci-Fi">Sci-Fi</a>
+    </div>
+    <a href="genre.html" class="choice-link">Pilihan</a>
+    </section>
+
+    <section>
+        <div class="section-title">
+            <h2>Rekomendasi Untuk Kamu</h2>
+            <a href="film.html">Lihat Semua</a>
+        </div>
+
+        <div class="cards cards-vertical">
+            <a href="film.html?title=John%20Wick" class="card-link" data-title="John Wick" data-video="assets/video/Johnwick.mp4"><div class="card">
+            <img src="assets/images/Johnwick.jpeg" alt="Poster John Wick" loading="lazy">
+                <h3>John Wick</h3>
+            </div></a>
+
+            <a href="film.html?title=Avengers" class="card-link" data-title="Avengers" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+            <img src="assets/images/avenger.png" alt="Poster Avengers" loading="lazy">
+                <h3>Avengers</h3>
+            </div></a>
+
+            <a href="film.html?title=Alas%20Roban" class="card-link" data-title="Alas Roban" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+            <img src="assets/images/alasroban.jpeg" alt="Poster Alas Roban" loading="lazy">
+                <h3>Alas Roban</h3>
+            </div></a>
+
+            <a href="film.html?title=Interstellar" class="card-link" data-title="Interstellar" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+            <img src="assets/images/interstelar.jpeg" alt="Poster Interstellar" loading="lazy">
+                <h3>Interstellar</h3>
+            </div></a>
+
+            <a href="film.html?title=Extraction" class="card-link" data-title="Jangan Buang Ibu" data-video="assets/video/Janganbuangibu.mp4"><div class="card">
+            <img src="assets/images/janganbuangibu.jpg" alt="Poster Jangan Buang Ibu" loading="lazy">
+                <h3>Jangan Buang Ibu</h3>
+            </div></a>
+
+            <a href="film.html?title=Avatar" class="card-link" data-title="Tunggu Aku Sukses Nanti" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+            <img src="assets/images/tunggusukses.jpeg" alt="Poster Tunggu Aku Sukses Nanti" loading="lazy">
+                <h3>Tunggu Aku Sukses Nanti</h3>
+            </div></a>
+
+            <a href="film.html?title=The%20Conjuring" class="card-link" data-title="Kejar Mimpi" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+            <img src="assets/images/Kejarmimpi.jpg" alt="Poster Kejar Mimpi" loading="lazy">
+                <h3>Kejar Mimpi</h3>
+            </div></a>
+
+            <a href="film.html?title=Harry%20Potter" class="card-link" data-title="Danur" data-video="https://www.w3schools.com/html/mov_bbb.mp4"><div class="card">
+            <img src="assets/images/Danur.jpg" alt="Poster Danur" loading="lazy">
+                <h3>Danur</h3>
+            </div></a>
+        </div>
+    </section>
+
+    <div id="home-player" class="player-section" style="display:none;">
+        <div class="player-header">
+            <h2 id="home-player-title">Now Playing</h2>
+            <button id="home-player-close" class="btn btn-ghost">Tutup</button>
+        </div>
+        <video id="home-film-video" controls preload="metadata" style="width:100%;border-radius:16px;background:#000;">
+            <source src="" type="video/mp4">
+            Browser Anda tidak mendukung pemutar video ini.
+        </video>
+    </div>
 </div>
 
 <footer>
-
-Copyright © 2026
-
+Copyright © 2026 STREAM++ | All Rights Reserved.
 </footer>
 
 </body>
